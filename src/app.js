@@ -155,6 +155,14 @@ const SuperEstrella = inventarioSinTrampa.push("super estrella");
 
 console.log(inventarioSinTrampa);
 
+const inventarioEnMayusculas = inventarioSinTrampa.map((item) => {
+  return item.toUpperCase();
+});
+
+console.log(inventarioEnMayusculas);
+
+const [primerItem, seguntoItem] = inventarioEnMayusculas;
+
 // Pregunta 15:
 // Usando el mismo arreglo de inventario anterior (el original, no los modificados).
 // Usa un bucle for o for...of para recorrer el inventario e imprime mensajes personalizados para cada objeto
@@ -163,6 +171,7 @@ console.log(inventarioSinTrampa);
 // Para cualquier otro objeto, imprime: "Mario tiene un(a) [nombre del objeto]."
 
 //write your code here
+//metodo for normal
 for (let i = 0; i <= inventario.length - 1; i++) {
   if (inventario[i] === "trampa") {
     console.log("¡Cuidado! Hay una trampa");
@@ -170,5 +179,17 @@ for (let i = 0; i <= inventario.length - 1; i++) {
     console.log("¡Una estrella! Usar en caso de emergencia");
   } else {
     console.log("Mario tiene un(a) " + inventario[i]);
+  }
+}
+
+//metodo for of
+
+for (const item of inventario) {
+  if (objeto === "trampa") {
+    console.log("¡Cuidado! Hay una trampa");
+  } else if (objeto === "estrella") {
+    console.log("¡Una estrella! Usar en caso de emergencia");
+  } else {
+    console.log("Mario tiene un(a) " + item);
   }
 }
